@@ -10,13 +10,13 @@ fi
 if [ "$1" == "push" ]; then
 	IFS_B="$IFS"
 	IFS=$'\n'
-	arr=(`cat /home/lee/alist`)
+	arr=(`cat 절대경로`)
 	for i in ${arr[@]}
 	do
 		name="$(echo "${i}" | cut -d',' -f1)"
 		commit="$(echo "${i}" | cut -d',' -f2)"
 		
-		cd /home/lee/Algorithm_Study
+		cd 절대경로
 		
 		git add "${name}"
 
@@ -32,19 +32,17 @@ if [ "$1" == "push" ]; then
 	done
 
 	IFS="$IFS_B"
-	cat /dev/null > /home/lee/alist
+	cat /dev/null > 절대경로
 	exit 0
 fi
 
-touch /home/lee/alist
+touch 절대경로
 
 if [ $# -eq 2 ]; 
 then
-	echo "${1},${2}" >> /home/lee/alist
+	echo "${1},${2}" >> 절대경로
 else
-	echo "${1}," >> /home/lee/alist
+	echo "${1}," >> 절대경로
 fi
-
-code /home/lee/Algorithm_Study/${1}
 
 exit 0
