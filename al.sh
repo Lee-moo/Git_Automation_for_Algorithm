@@ -10,13 +10,13 @@ fi
 if [ "$1" == "push" ]; then
 	IFS_B="$IFS"
 	IFS=$'\n'
-	arr=(`cat 절대경로`)
+	arr=(`cat 절대경로(1)/파일`)
 	for i in ${arr[@]}
 	do
 		name="$(echo "${i}" | cut -d',' -f1)"
 		commit="$(echo "${i}" | cut -d',' -f2)"
 		
-		cd 절대경로
+		cd 절대경로(2)
 		
 		git add "${name}"
 
@@ -32,17 +32,17 @@ if [ "$1" == "push" ]; then
 	done
 
 	IFS="$IFS_B"
-	cat /dev/null > 절대경로
+	cat /dev/null > 절대경로(1)/파일
 	exit 0
 fi
 
-touch 절대경로
+touch 절대경로(1)/파일
 
 if [ $# -eq 2 ]; 
 then
-	echo "${1},${2}" >> 절대경로
+	echo "${1},${2}" >> 절대경로(1)/파일
 else
-	echo "${1}," >> 절대경로
+	echo "${1}," >> 절대경로(1)/파일
 fi
 
 exit 0
