@@ -41,7 +41,7 @@
   <ul>
   <li>일반적인 추가는 <b>ex) ./al.sh test.py</b> 처럼 생성하고 싶은 파일을 생성할 수 있습니다.</li>
   <li>두 번째 방식은 인자를 두 개 넘기는 경우인데 첫 번째 인자는 생성하고 싶은 파일을, 마지막 인자는 
-    추가하고 싶은 날짜를 double quotes("")안에 적어주면 됩니다. <b>ex) ./al.sh test.py Oct 5"</b></li>
+    추가하고 싶은 날짜를 double quotes("")안에 적어주면 됩니다. <b>ex) ./al.sh test.py "Oct 5"</b></li>
   </ul>
   2️⃣ git push
    <ul>
